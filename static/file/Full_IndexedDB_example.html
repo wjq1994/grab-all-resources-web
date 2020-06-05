@@ -2,9 +2,8 @@
 <html>
 
 <head>
-  <title>indexdb mdn</title>
   <meta charset="utf-8">
-  <link href="./samples.37902ba3b7fe.css" rel="stylesheet" type="text/css" />
+  <link href="samples.37902ba3b7fe.css" rel="stylesheet" type="text/css" />
 
   <style type="text/css">
     body {
@@ -103,7 +102,6 @@
 
 <body>
 
-  <script type="text/javascript" src="jquery-1.8.3.js"></script>
 
   <h1>IndexedDB Demo: storing blobs, e-publication example</h1>
   <div class="note">
@@ -231,7 +229,7 @@
     </ul>
   </div>
 
-
+  <script src="../jquery-1.8.3.js"></script>
   <script>
     (function () {
       var COMPAT_ENVS = [
@@ -683,7 +681,28 @@
 
     })(); // Immediately-Invoked Function Expression (IIFE)
   </script>
-
+  
+  <script>
+    
+    $('link').each((index, ele) => {
+      var filePath = ele.href,
+        lastIndex = filePath.lastIndexOf('/'),
+        fileName = filePath.substr(lastIndex + 1);
+      ele.href = fileName;
+    });
+    $('script').each((index, ele) => {
+      var filePath = ele.src,
+        lastIndex = filePath.lastIndexOf('/'),
+        fileName = filePath.substr(lastIndex + 1);
+      ele.src = fileName;
+    });
+    $('img').each((index, ele) => {
+      var filePath = ele.src,
+        lastIndex = filePath.lastIndexOf('/'),
+        fileName = filePath.substr(lastIndex + 1);
+      ele.src = fileName;
+    });
+  </script>
 </body>
 
 </html>
